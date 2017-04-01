@@ -1,0 +1,32 @@
+<!--
+Create tabs with an icon and label, using the tabs-royal style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-royal" keyboard-handler>
+  <!-- Products Tab -->
+  <ion-tab title="Products" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/products">
+    <ion-nav-view name="tab-products"></ion-nav-view>
+  </ion-tab>
+  <!-- Feedback Tab -->
+  <ion-tab title="Feedback" icon-off="ion-ios-email-outline" icon-on="ion-ios-email" href="#/tab/feedback">
+    <ion-nav-view name="tab-feedback"></ion-nav-view>
+  </ion-tab>
+  <!-- About Tab -->
+  <ion-tab title="About" icon-off="ion-ios-information-outline" icon-on="ion-ios-information" href="#/tab/about">
+    <ion-nav-view name="tab-about"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
+
+
+<!-- for customizing the button in popup -->
+<style>
+  .popup-buttons .button {
+    background-color: #886aea;
+    font-size: 16px;
+  }
+
+  .popup-buttons .button.activated {
+    background-color: #6b46e5;
+  }
+</style>

@@ -1,0 +1,34 @@
+<ion-view view-title="Products" hide-nav-bar="true">
+  <ion-header-bar align-title="center" class="bar-royal">
+    <!--  <div class="buttons"> <button class="button">Left Button</button> </div> -->
+    <h1 class="title">Products</h1>
+    <!--   <div class="buttons"> <button class="button">Right Button</button> </div> -->
+  </ion-header-bar>
+  <div class="bar bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+       <i class="icon ion-ios-search placeholder-icon"></i>
+       <input type="Search" placeholder="Search" ng-model="data.search" ng-change="scrollTop()">
+     </label>
+    <button class="button button-royal" ng-click="data.search=''" ng-disabled="data.search==''" ng-init="data.search=''">Clear</button>
+  </div>
+  <ion-content class="has-header has-subheader" overflow-scroll="false">
+    <div class="card">
+      <div class="item item-divider">
+        <div class="row">
+          <div class="col col-50" align="left">Product Name</div>
+          <div class="col" align="center">Quantity</div>
+          <div class="col" align="right">Price</div>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item ng-repeat="product in data.products  | filter:data.search">
+          <div class="row">
+            <div class="col col-50 item-text-wrap" align="left">{{product.name}}</div>
+            <div class="col item-text-wrap" align="center">{{product.qty == 0 ? "Out Of Stock" : product.qty }}</div>
+            <div class="col item-text-wrap" align="right">{{product.price | INR}}</div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
